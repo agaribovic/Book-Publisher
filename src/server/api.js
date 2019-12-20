@@ -1,7 +1,8 @@
 const router = require('express').Router()
 
 const MongoClient = require('mongodb').MongoClient
-const connectionString = 'mongodb+srv://admin:admin@development-kajij.mongodb.net/test?retryWrites=true&w=majority'
+const connectionString = 'mongodb+srv://scode:admin@cluster0-6bmqd.mongodb.net/test?retryWrites=true&w=majority'
+
 const client = new MongoClient(connectionString, {
   useUnifiedTopology: true,
   useNewUrlParser: true
