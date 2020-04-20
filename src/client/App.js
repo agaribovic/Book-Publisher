@@ -1,21 +1,30 @@
-import React, { useEffect } from 'react'
-import { useSelector, useDispatch } from 'react-redux'
-import './app.css'
-import { loadPosts } from './modules/posts'
+import React, { Component } from "react";
+import PostForm from "./modules/AddPosts";
+import GetPosts from "./modules/GetPosts";
 
-export const App = () => {
-  const dispatch = useDispatch()
-  const posts = useSelector(state => state.posts)
+class App extends Component {
+  constructor(props) {
+    super(props);
+  }
 
-  useEffect(() => {
-    dispatch(loadPosts())
-  }, [])
+  render() {
+    const style = {
+      textAlign: "center",
+      color: "black",
+      backgroundColor: "grey",
+      opacity: "80%",
+    };
 
-  return (
-    <div>
-      <pre>{JSON.stringify(posts, null, 2)}</pre>
-    </div>
-  )
+    return (
+      <div>
+        <h1 style={style}> Scode Exercise 2020 </h1>
+        <div className="wrapper">
+          <GetPosts />
+          <PostForm />
+        </div>
+      </div>
+    );
+  }
 }
 
-export default App
+export default App;

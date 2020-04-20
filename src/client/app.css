@@ -1,8 +1,15 @@
-h1 {
-  color: green;
+body {
+  max-width: 1200px;
+  margin: auto;
+  background-image: url("/exercise_material/background-image.jpg");
 }
 
-body {
-	max-width: 1200px;
-	  margin: auto;
+.addPost,
+.displayPosts {
+  margin-left: 50px;
+}
+
+.wrapper {
+  background-color: white;
+  padding: 10px;
 }
