@@ -35,7 +35,7 @@ class PostForm extends Component {
     const buttonStyle = {
       color: "white",
       backgroundColor: "#8b0000",
-      marginLeft: "50px",
+      marginLeft: "85px",
     };
 
     return (

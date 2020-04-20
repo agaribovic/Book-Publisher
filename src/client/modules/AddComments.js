@@ -1,8 +1,8 @@
 import React from "react";
 
 class AddComments extends React.Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
 
     this.displayData = [];
 
@@ -14,9 +14,8 @@ class AddComments extends React.Component {
     };
 
     this.appendData = this.appendData.bind(this);
-    this.handleChangeFirst = this.handleChangeFirst.bind(this);
-    this.handleChangeSecond = this.handleChangeSecond.bind(this);
-    this.handleChangeThird = this.handleChangeThird.bind(this);
+
+
   }
 
   appendData() {
@@ -47,59 +46,38 @@ class AddComments extends React.Component {
     });
   }
 
-  handleChangeFirst(e) {
-    let getAuthor = e.target.value;
-    this.setState({
-      author: getAuthor,
-    });
-  }
-
-  handleChangeSecond(e) {
-    let getTitle = e.target.value;
-    this.setState({
-      title: getTitle,
-    });
-  }
-
-  handleChangeThird(e) {
-    let getText = e.target.value;
-    this.setState({
-      text: getText,
-    });
-  }
-
   render() {
     const buttonStyle = {
       color: "white",
       backgroundColor: "#8b0000",
-      marginLeft: "50px",
-    };
-
-    const inputStyle = {
-      width: "800px",
-      marginLeft: "50px",
+      marginLeft: "77px",
     };
 
     return (
-      <div>
+      <div style={{marginBottom: '25px'}}>
+        <label>Author:</label>
         <input
           type="text"
           value={this.state.author}
-          onChange={this.handleChangeFirst}
-          style={inputStyle}
+          onChange={(event) => this.setState({ author: event.target.value })}
+          style={{width: '800px', marginLeft: '30px'}}
         />
+        <br/>
+        <label>Title:</label>
         <input
           type="text"
           value={this.state.title}
-          onChange={this.handleChangeSecond}
-          style={inputStyle}
+          onChange={(event) => this.setState({ title: event.target.value })}
+          style={{width: '800px', marginLeft: '46px'}}
         />
+        <br/>
+        <label>Text:</label>
         <textarea
           rows="4"
           cols="50"
           value={this.state.text}
-          onChange={this.handleChangeThird}
-          style={inputStyle}
+          onChange={(event) => this.setState({ text: event.target.value })}
+          style={{width: '800px', marginLeft: '47px'}}
         ></textarea>
         <div>
           <input
