@@ -45,7 +45,7 @@ class PostForm extends Component {
           type="text"
           value={this.state.author}
           onChange={(event) => this.setState({ author: event.target.value })}
-          style={{ width: "800px", marginLeft: "40px" }}
+          style={{ width: "800px", marginLeft: "39px" }}
         />{" "}
         <br />
         <br />
@@ -54,7 +54,7 @@ class PostForm extends Component {
           type="text"
           value={this.state.title}
           onChange={(event) => this.setState({ title: event.target.value })}
-          style={{ width: "800px", marginLeft: "53px" }}
+          style={{ width: "800px", marginLeft: "55px" }}
         />{" "}
         <br />
         <br />

@@ -1,5 +1,7 @@
 import React, { Component } from "react";
 import AddComments from "./AddComments";
+import "../app.css";
+import moment from "moment";
 
 class Post extends Component {
   constructor(props) {
@@ -14,19 +16,8 @@ class Post extends Component {
     if (this.state.formHidden === false) this.setState({ formHidden: true });
     else this.setState({ formHidden: false });
   };
-  
+
   render() {
-   
-    let today = new Date();
-    let dd = today.getDate();
-    let mm = today.getMonth() + 1;
-    let yyyy = today.getFullYear();
-
-    if (dd < 10) dd = "0" + dd;
-    if (mm < 10) mm = "0" + mm;
-
-    today = dd + "." + mm + "." + yyyy;
-
     const style = {
       color: "white",
       backgroundColor: "#8b0000",
@@ -37,7 +28,7 @@ class Post extends Component {
     return (
       <div>
         <h5 style={{ color: "grey" }}>
-          <span>{today} | </span>
+          <span>{moment(new Date()).format("DD.MM.YYYY")} | </span>
           {this.props.author}
         </h5>
         <h5>{this.props.title}</h5>

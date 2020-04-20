@@ -1,4 +1,5 @@
 import React from "react";
+import moment from "moment";
 
 class AddComments extends React.Component {
   constructor(props) {
@@ -14,36 +15,27 @@ class AddComments extends React.Component {
     };
 
     this.appendData = this.appendData.bind(this);
-
-
   }
 
   appendData() {
-    let today = new Date();
-    let dd = today.getDate();
-    let mm = today.getMonth() + 1;
-    let yyyy = today.getFullYear();
-
-    if (dd < 10) dd = "0" + dd;
-    if (mm < 10) mm = "0" + mm;
-    today = dd + "." + mm + "." + yyyy;
-
-    this.displayData.push(
-      <div id="display-data">
-        <h5 style={{ color: "grey" }}>
-          <span>{today} | </span>
-          {this.state.author}
-        </h5>
-        <h5>{this.state.title}</h5>
-        <p>{this.state.text}</p>
-      </div>
-    );
-    this.setState({
-      showdata: this.displayData,
-      author: "",
-      title: "",
-      text: "",
-    });
+    if (this.state.author && this.state.title && this.state.text) {
+      this.displayData.push(
+        <div id="display-data">
+          <h5 style={{ color: "grey" }}>
+            <span>{moment(new Date()).format("DD.MM.YYYY")} | </span>
+            {this.state.author}
+          </h5>
+          <h5>{this.state.title}</h5>
+          <p>{this.state.text}</p>
+        </div>
+      );
+      this.setState({
+        showdata: this.displayData,
+        author: "",
+        title: "",
+        text: "",
+      });
+    } else alert("Please fill in all the required fields!");
   }
 
   render() {
@@ -54,30 +46,30 @@ class AddComments extends React.Component {
     };
 
     return (
-      <div style={{marginBottom: '25px'}}>
+      <div style={{ marginBottom: "25px" }}>
         <label>Author:</label>
         <input
           type="text"
           value={this.state.author}
           onChange={(event) => this.setState({ author: event.target.value })}
-          style={{width: '800px', marginLeft: '30px'}}
+          style={{ width: "800px", marginLeft: "30px" }}
         />
-        <br/>
+        <br />
         <label>Title:</label>
         <input
           type="text"
           value={this.state.title}
           onChange={(event) => this.setState({ title: event.target.value })}
-          style={{width: '800px', marginLeft: '46px'}}
+          style={{ width: "800px", marginLeft: "46px" }}
         />
-        <br/>
+        <br />
         <label>Text:</label>
         <textarea
           rows="4"
           cols="50"
           value={this.state.text}
           onChange={(event) => this.setState({ text: event.target.value })}
-          style={{width: '800px', marginLeft: '47px'}}
+          style={{ width: "800px", marginLeft: "47px" }}
         ></textarea>
         <div>
           <input

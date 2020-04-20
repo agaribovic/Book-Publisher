@@ -9,15 +9,24 @@ class App extends Component {
 
   render() {
     const style = {
-      textAlign: "center",
       color: "black",
-      backgroundColor: "grey",
-      opacity: "80%",
+      backgroundColor: "lightgrey",
+      opacity: "60%",
+      margin: "0",
+      padding: "0",
+      marginBottom: "15px",
+      width: "100%",
+      width: "100vw",
+      position: "absolute",
+      left: 0,
     };
 
     return (
       <div>
-        <h1 style={style}> Scode Exercise 2020 </h1>
+        <h1 style={style}>
+          {" "}
+          <span style={{ marginLeft: "330px" }}>Scode Exercise 2020</span>{" "}
+        </h1>
         <div className="wrapper">
           <GetPosts />
           <PostForm />

@@ -12,4 +12,6 @@ body {
 .wrapper {
   background-color: white;
   padding: 10px;
+  position: relative;
+  top: 60px;
 }
