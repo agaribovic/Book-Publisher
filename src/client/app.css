@@ -15,3 +15,8 @@ body {
   position: relative;
   top: 60px;
 }
+
+.postDiv {
+  word-wrap: break-word;
+  width: 1100px;
+}

@@ -18,22 +18,24 @@ class Post extends Component {
   };
 
   render() {
-    const style = {
+    const buttonStyle = {
       color: "white",
       backgroundColor: "#8b0000",
       float: "right",
-      marginRight: "100px",
+      marginRight: "20px",
+      padding: "3px",
+      width: "70px",
     };
 
     return (
-      <div>
+      <div className="postDiv">
         <h5 style={{ color: "grey" }}>
           <span>{moment(new Date()).format("DD.MM.YYYY")} | </span>
           {this.props.author}
         </h5>
         <h5>{this.props.title}</h5>
         <p>{this.props.text}</p>
-        <button style={style} onClick={this.showCommentForm}>
+        <button style={buttonStyle} onClick={this.showCommentForm}>
           Answer
         </button>
 

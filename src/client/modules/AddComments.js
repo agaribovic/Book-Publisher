@@ -42,7 +42,9 @@ class AddComments extends React.Component {
     const buttonStyle = {
       color: "white",
       backgroundColor: "#8b0000",
-      marginLeft: "77px",
+      marginLeft: "79px",
+      padding: "3px",
+      width: "70px",
     };
 
     return (
@@ -55,6 +57,7 @@ class AddComments extends React.Component {
           style={{ width: "800px", marginLeft: "30px" }}
         />
         <br />
+        <br />
         <label>Title:</label>
         <input
           type="text"
@@ -62,6 +65,7 @@ class AddComments extends React.Component {
           onChange={(event) => this.setState({ title: event.target.value })}
           style={{ width: "800px", marginLeft: "46px" }}
         />
+        <br />
         <br />
         <label>Text:</label>
         <textarea
